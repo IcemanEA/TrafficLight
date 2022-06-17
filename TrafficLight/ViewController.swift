@@ -8,23 +8,39 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet var redLightView: UIView!
-    @IBOutlet var yellowLightView: UIView!
-    @IBOutlet var greenLightView: UIView!
     
+    @IBOutlet var lightViews: [UIView]!
+    @IBOutlet var nextButton: UIButton!
     
-    @IBOutlet var lightStackView: UIStackView!
+    private var activeLightIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        nextButton.layer.cornerRadius = 10
+        for lightView in lightViews {
+            lightView.layer.cornerRadius = lightView.frame.height / 2
+        }
         
+        lightTurnOff()
     }
 
     @IBAction func nextButtonTapped() {
-        redLightView.alpha = 1
+        nextButton.setTitle("NEXT", for: .normal)
         
+        activeLightIndex += 1
+        
+        if activeLightIndex == lightViews.count {
+            activeLightIndex = 0
+        }
+        lightTurnOff()
+        lightViews[activeLightIndex].alpha = 1
+    }
+    
+    private func lightTurnOff() {
+        for lightView in lightViews {
+            lightView.alpha = 0.3
+        }
     }
     
 }

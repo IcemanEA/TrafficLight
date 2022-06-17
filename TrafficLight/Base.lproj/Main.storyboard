@@ -22,14 +22,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-AV-31M">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="376"/>
                                         <subviews>
-                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiT-GG-lbs">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiT-GG-lbs">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MiT-GG-lbs" secondAttribute="height" multiplier="1:1" id="ppk-sW-C2U"/>
                                                 </constraints>
                                             </view>
-                                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzJ-oM-X9b">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzJ-oM-X9b">
                                                 <rect key="frame" x="0.0" y="128" width="120" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
@@ -74,10 +74,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="greenLightView" destination="z8t-mC-TMj" id="4wD-7S-axv"/>
-                        <outlet property="lightStackView" destination="IV3-AV-31M" id="wdH-BC-U0p"/>
-                        <outlet property="redLightView" destination="MiT-GG-lbs" id="fUb-mq-xYU"/>
-                        <outlet property="yellowLightView" destination="nzJ-oM-X9b" id="m5i-Wk-QS8"/>
+                        <outlet property="nextButton" destination="ohJ-9m-Q4E" id="TNh-fW-x2b"/>
+                        <outletCollection property="lightViews" destination="z8t-mC-TMj" collectionClass="NSMutableArray" id="C4i-AT-A5p"/>
+                        <outletCollection property="lightViews" destination="nzJ-oM-X9b" collectionClass="NSMutableArray" id="dQr-oa-CnW"/>
+                        <outletCollection property="lightViews" destination="MiT-GG-lbs" collectionClass="NSMutableArray" id="h6L-8k-bUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
