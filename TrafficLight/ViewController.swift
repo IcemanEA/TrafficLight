@@ -18,13 +18,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         nextButton.layer.cornerRadius = 10
-        for lightView in lightViews {
-            lightView.layer.cornerRadius = lightView.frame.height / 2
-        }
         
         lightTurnOff()
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        for lightView in lightViews {
+            lightView.layer.cornerRadius = lightView.frame.height / 2
+        }
+    }
+    
     @IBAction func nextButtonTapped() {
         nextButton.setTitle("NEXT", for: .normal)
         
